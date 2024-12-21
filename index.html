@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soon..</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- أيقونات Font Awesome -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ff3;
+            color: #366;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* لمنع تمرير الصفحة */
+            background: url('picasso.png') no-repeat center center
+        }
+
+        header {
+            background-color:;
+            color: #ff0;
+            padding: 0.5px; /* تقليل ارتفاع شريط العنوان */
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative; /* لجعل اللوغو يتداخل مع الهيدر */
+        }
+
+        .logo {
+            position: absolute;
+            left: 25px;
+            top: 5px;
+            height: 55px; /* ارتفاع اللوغو */
+            width: 55px; /* عرض اللوغو */
+            border-radius: 50%; /* شكل دائري */
+            cursor: pointer;
+            transition: transform 0.3s; /* تأثير عند وضع الفأرة */
+        }
+
+        .logo:hover {
+            transform: scale(1.1); /* تكبير اللوغو عند التحويم */
+        }
+
+        nav {
+            margin: 10px 0; /* تقليل المسافة بين العناصر */
+        }
+
+        nav button {
+            background: #333;
+            color: #fb2444;
+            border: none;
+            padding: 10px 20px; /* تقليل الحشوة */
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            font-size: 14px; /* تقليل حجم الخط */
+        }
+
+        nav button:hover {
+            background: #777;
+            transform: scale(1.05);
+        }
+
+        .section {
+            display: none;
+            padding: 20px;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        h2 {
+            text-align: center;
+            ffffff#; /* لون جذاب */
+            margin-bottom: 20px;
+        }
+        h1 {
+           text-align: center;
+           color: #ffffff; /* لون جذاب */
+           margin-bottom: 20px;
+        }
+
+       h3 {
+            text-align: center;
+            color: #ffffff; /* لون جذاب */
+            margin-bottom: 40px;
+        }
+
+        .main-background {
+            background: url('background.jpg') no-repeat center center; /* خلفية يمكن تغييرها */
+            background-size: cover;
+            padding: 40px 0; /* إضافة مساحة حول المحتوى */
+            position: relative;
+         }
+        
+        .snowflake {
+            position: absolute;
+            color: #fb2444;
+            font-size: 1em;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: #222;
+            color: #fb2444;
+            width: calc(33% - 20px);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .card p {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+                
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #000;
+            position: relative;
+            color: #fb2444;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* توزيع العناصر في الفوتر */
+        }
+
+        .footer-logo {
+            height: 40px; /* ارتفاع اللوغو في الفوتر */
+            margin-left: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+             transform: scale(1.1);
+            transition: transform 0.3s; 
+            transform: scale(1.1);
+        }
+
+        .settings {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .settings div {
+            cursor: pointer;
+            font-size: 20px;
+            margin: 5px 0;
+            color: #fb2444;
+            transition: color 0.3s;
+        }
+
+        .settings div:hover {
+            color: #fb2444;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #fb2444;
+        }
+
+        .footer-text {
+            flex-grow: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="picasso.png" alt="لوغو" class="logo" onclick="showSection('main')"> <!-- لوغو -->
+        <nav>
+            <button onclick="showSection('main')"><i class="fas fa-home"></i> الرئيسية</button>
+            <button onclick="showSection('home')"><i class="fas fa-newspaper"></i> أخبار</button>
+            <button onclick="showSection('videos')"><i class="fas fa-video"></i> فيديوهات</button>
+            <button onclick="showSection('images')"><i class="fas fa-image"></i> صور</button>
+            <button onclick="showSection('results')"><i class="fas fa-trophy"></i> soon..</button>
+        </nav>
+        
+        </div>
+    </header>
+    
+    <main>
+        <section id="main" class="section active main-background">
+            <div class="main-content">
+                
+            <div class="main-content">
+                <h2>رئيسية</h2>
+                <h2 class="main-description">مرحبًا بكم في موقعنا 🙃</h2>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <img src="Lahcen Picasso.png" alt="صورة 1">
+                        <p class="card-title">Lahcen Picasso</p>
+                    </div>
+
+<div class="card">
+<a href="قران كريم.mp4" target="_blank">
+<img src="....png" alt="فيديو 1">
+<p class="card-title">قل لمن الارض ومن فيها 😌</p>
+</a>
+</div>
+
+                </div>
+            </div>
+            <div class="snow" id="snowContainer"></div>
+        </section>
+
+        <section id="home" class="section">
+            <h2>أخبار</h2>
+            <div class="card-container" id="newsContainer">
+                <!-- بطاقات الأخبار -->
+                <div class="card">
+                    <img src="picasso.png" alt="خبر 1">
+                    <p class="card-title">Picasso Web📉</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="videos" class="section">
+            <h2>فيديوهات</h2>
+            <div class="card-container" id="videoContainer">
+                <!-- بطاقات الفيديو -->
+                <div class="card">
+                    <a href="قران كريم.mp4" target="_blank">
+                        <img src="....png" alt="فيديو 1">
+                        <p class="card-title">قل لمن الارض ومن فيها 😌</p>
+                    </a>
+                </div>
+          
+            </div>
+        </section>
+
+        <section id="images" class="section">
+            <h2>صور</h2>
+            <div class="card-container">
+               
+                <div class="card">
+                    <img src="picasso.png" alt="صورة 2">
+                    <p>picasso</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="section">
+            <h2>sooon..</h2>
+            <div class="card-container">
+            
+                <div class="card">
+                    <img src="picasso.png" alt="">
+                    <p>picasso</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-text">حقوق الطبع والنشر © 2024جميع الحقوق محفوظة</div>
+        <img src="picasso.png" alt="لوغو الفوتر" class="footer-logo"> <!-- لوغو الفوتر -->
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/2a9al/?locale=ar_AR" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@lahcen_d.keeler" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        let snowActive = true;
+        let snowflakes = [];
+        let snowSpeed = 5;
+        let snowSize = 20;
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+    
+
+        document.addEventListener('wheel', function(event) {
+            // تحريك الصفحة بناءً على حركة عجلة الفأرة
+            window.scrollBy(0, event.deltaY);
+        });
+
+        createSnowflakes();
+    </script>
+</body>
+</html>
